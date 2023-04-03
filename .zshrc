@@ -124,3 +124,7 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # dotconfigs git repo
 alias config='/usr/bin/git --git-dir=/Users/jacob/.cfg/ --work-tree=/Users/jacob'
+alias nv=nvim
+alias ra=ranger
+alias cl=clear
+alias nf=neofetch
