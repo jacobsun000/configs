@@ -122,9 +122,15 @@ source $ZSH/oh-my-zsh.sh
 # java configuration
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
+
+# defult editor
+export EDITOR='nvim'
+export VISUAL='nvim'
+
 # dotconfigs git repo
 alias config='/usr/bin/git --git-dir=/Users/jacob/.cfg/ --work-tree=/Users/jacob'
 alias nv=nvim
 alias ra=ranger
 alias cl=clear
 alias nf=neofetch
+alias q=exit
