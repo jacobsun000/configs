@@ -134,3 +134,4 @@ alias ra=ranger
 alias cl=clear
 alias nf=neofetch
 alias q=exit
+alias mpv='mpv --fullscreen'
