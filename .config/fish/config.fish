@@ -27,6 +27,7 @@ set -x GIT_EDITOR $EDITOR
 # aliases
 alias ls=exa
 alias nv=nvim
+alias nf=neofetch
 alias pf=pfetch
 alias ra=joshuto
 alias q=exit
