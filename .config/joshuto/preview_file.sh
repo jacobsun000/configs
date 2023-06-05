@@ -148,7 +148,7 @@ handle_mime() {
 	## uncommented other methods to preview those formats
 	*wordprocessingml.document | */epub+zip | */x-fictionbook+xml)
 		## Preview as markdown conversion
-		pandoc -s -t markdown -- "${FILE_PATH}" | bat --theme=Dracula -l markdown \
+		pandoc -s -t markdown -- "${FILE_PATH}" | bat -l markdown \
 			--color=always --paging=never \
 			--style=plain \
 			--terminal-width="${PREVIEW_WIDTH}" && exit 0
@@ -173,7 +173,7 @@ handle_mime() {
 
 	## Text
 	text/* | */xml)
-		bat --theme=Dracula --color=always --paging=never \
+		bat --color=always --paging=never \
 			--style=plain \
 			--terminal-width="${PREVIEW_WIDTH}" \
 			"${FILE_PATH}" && exit 0

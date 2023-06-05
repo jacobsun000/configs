@@ -24,12 +24,16 @@ set -x GIT_EDITOR $EDITOR
 # vi-mode
 # set fish_key_bindings fish_user_key_bindings
 
+# bat
+set MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set BAT_THEME "Monokai Extended Origin"
+
 # aliases
 alias ls=exa
 alias nv=nvim
 alias nf=neofetch
 alias pf=pfetch
-alias ra=joshuto
+alias ra='joshuto --change-directory'
 alias q=exit
 alias cl=clear
 alias mpv='mpv --fullscreen'
