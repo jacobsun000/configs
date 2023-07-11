@@ -30,6 +30,7 @@ set BAT_THEME "Monokai Extended Origin"
 
 # aliases
 alias ls=exa
+alias la='exa -a'
 alias nv=nvim
 alias nf=neofetch
 alias pf=pfetch
