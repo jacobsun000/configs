@@ -39,3 +39,4 @@ alias q=exit
 alias cl=clear
 alias mpv='mpv --fullscreen'
 alias lg=lazygit
+zoxide init fish | source

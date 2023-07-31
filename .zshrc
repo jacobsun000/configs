@@ -135,3 +135,5 @@ alias cl=clear
 alias nf=neofetch
 alias q=exit
 alias mpv='mpv --fullscreen'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
