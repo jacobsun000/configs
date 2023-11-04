@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2023 Ticks <ticks.cc@gmail.com>
+##
+## Start Launcher Script
+##
+
+dir="${HOME}/.config/rofi"
+menu_style="${dir}/clipboard.rasi"
+
+cliphist list | rofi -dmenu -theme $menu_style | cliphist decode | wl-copy
