@@ -17,6 +17,9 @@ or set PATH /opt/homebrew/opt/openjdk/bin $PATH
 contains ~/.cargo/bin
 or set PATH ~/.cargo/bin $PATH
 
+contains ~/.local/share/gem/ruby/3.0.0/bin
+or set PATH ~/.local/share/gem/ruby/3.0.0/bin $PATH
+
 # defult editor
 set -x EDITOR nvim
 set -x VISUAL $EDITOR
@@ -42,3 +45,18 @@ alias cl=clear
 alias mpv='mpv --fullscreen'
 alias lg=lazygit
 alias copy=wl-copy
+alias r='./run.sh'
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /home/jacob/miniconda3/bin/conda
+    eval /home/jacob/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+else
+    if test -f "/home/jacob/miniconda3/etc/fish/conf.d/conda.fish"
+        . "/home/jacob/miniconda3/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH "/home/jacob/miniconda3/bin" $PATH
+    end
+end
+# <<< conda initialize <<<
+
