@@ -6,7 +6,7 @@ return {
       transparent_background = false,
       devicons = true,
       filter = "pro",
-      background_clear = { "float_win", "toggleterm", "telescope", "notify", "which-key" },
+      background_clear = { "float_win", "toggleterm", "telescope", "notify", "which-key", "neo-tree", "bufferline" },
       styles = {
         comment = { italic = true },
       },

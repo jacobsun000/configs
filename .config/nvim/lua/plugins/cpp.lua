@@ -33,7 +33,7 @@ return {
           "--completion-style=detailed",
           "--function-arg-placeholders",
           "--suggest-missing-includes",
-          "--fallback-style=Google",
+          "--fallback-style=~/.config/nvim/.clang-format",
         },
         init_options = {
           usePlaceholders = true,
