@@ -1,0 +1,152 @@
+@import "./colors.css";
+
+* {
+  background: transparent;
+  font-family: "adobe-source-code-pro";
+  font-size: 15px;
+  color: white;
+  margin: 1px 1px 0px 1px;
+}
+
+#waybar {
+  background: alpha(shade(@foreground, 0.4), 0.1);
+}
+
+#tray menu,
+tooltip {
+  background: @background;
+  color: @active;
+  border: 1px solid shade(@active, 0.6);
+}
+
+#scroll,
+#clock,
+#hardware,
+#scripts,
+#custom-weather,
+#batteries,
+#workspaces,
+#clock,
+#tray {
+  background: alpha(@background, 0.9);
+  border-radius: 8px;
+  padding: 2px;
+  margin-right: 4px;
+  border: 1px solid alpha(shade(@active, 0.6),0.1);
+}
+
+#tray {
+  padding: 0px 8px 0px 8px;
+}
+
+#workspaces button {
+  padding: 0px;
+  border-radius: 50%;
+  color: shade(@background, 0.8);
+}
+#workspaces button.urgent {
+  text-decoration: underline;
+  font-weight: bold;
+}
+#workspaces button.active {
+  background: shade(alpha(@foreground, 0.2), 0.8);
+  color: shade(@foreground, 0.9);
+  border-radius: 6px;
+}
+
+#cpu,
+#clock,
+#network,
+#custom-cputemp,
+#submap,
+#custom-updates,
+#gamemode,
+#custom-notifications,
+#bluetooth,
+#disk,
+#memory,
+#pulseaudio,
+#pulseaudio.mic,
+#backlight {
+  padding: 0px 6px 0px 6px;
+}
+
+/* subhighlight */
+#submap,
+#bluetooth.connected {
+  background: shade(alpha(@foreground, 0.1), 0.8);
+  border-radius: 8px;
+}
+
+#custom-brightness,
+#pulseaudio,
+#pulseaudio.mic {
+  color: #7aa2f7;
+}
+
+#bluetooth {
+  color: #7aa2ff;
+}
+
+#memory {
+  color: shade(#cca0e4, 0.8);
+}
+
+#disk {
+  color: shade(#7aa2f7, 0.8);
+}
+
+#cpu {
+  color: shade(#a6e3a1, 0.8);
+}
+
+#custom-batterysaver.powersave,
+#custom-batterysaver.power {
+  color: #a6e3a1;
+}
+#custom-batterysaver.default,
+#custom-batterysaver.normal {
+  color: @foreground;
+}
+#custom-batterysaver.performance {
+  color: #d78787;
+}
+
+#network {
+  color: #a6e3a1;
+}
+
+#network.disabled,
+#network.disconnected {
+  color: #d78787;
+}
+@keyframes blink {
+  to {
+    background-color: alpha(red, 0.6);
+    color: @foreground;
+  }
+}
+@keyframes blink-blue {
+  to {
+    background-color: alpha(#7aa2f7, 0.6);
+    color: @foreground;
+  }
+}
+
+#bluetooth.discoverable,
+#bluetooth.discovering,
+#bluetooth.pairable {
+  animation-name: blink-blue;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* Override */
+
+#clock {
+  margin-left: 0px;
+  border-radius: 0px 8px 8px 0px;
+  background: alpha(@background, 0.6);
+}
