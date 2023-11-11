@@ -3,6 +3,7 @@ if status is-interactive
 end
 
 zoxide init fish | source
+thefuck --alias | source
 
 # PATH
 contains /usr/local/bin $PATH
@@ -50,13 +51,12 @@ alias r='./run.sh'
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 if test -f /home/jacob/miniconda3/bin/conda
-    eval /home/jacob/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+    eval /home/jacob/miniconda3/bin/conda "shell.fish" hook $argv | source
 else
     if test -f "/home/jacob/miniconda3/etc/fish/conf.d/conda.fish"
         . "/home/jacob/miniconda3/etc/fish/conf.d/conda.fish"
     else
-        set -x PATH "/home/jacob/miniconda3/bin" $PATH
+        set -x PATH /home/jacob/miniconda3/bin $PATH
     end
 end
 # <<< conda initialize <<<
-
