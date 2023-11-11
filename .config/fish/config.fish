@@ -5,22 +5,6 @@ end
 zoxide init fish | source
 thefuck --alias | source
 
-# PATH
-contains /usr/local/bin $PATH
-or set PATH /usr/local/bin $PATH
-
-contains /opt/homebrew/bin
-or set PATH /opt/homebrew/bin $PATH
-
-contains /opt/homebrew/opt/openjdk/bin
-or set PATH /opt/homebrew/opt/openjdk/bin $PATH
-
-contains ~/.cargo/bin
-or set PATH ~/.cargo/bin $PATH
-
-contains ~/.local/share/gem/ruby/3.0.0/bin
-or set PATH ~/.local/share/gem/ruby/3.0.0/bin $PATH
-
 # defult editor
 set -x EDITOR nvim
 set -x VISUAL $EDITOR
@@ -36,7 +20,9 @@ set BAT_THEME "Monokai Extended Origin"
 
 # aliases
 alias ls=exa
+alias cat=bat
 alias la='exa -a'
+alias lla='exa -la'
 alias nv=nvim
 alias vim=nvim
 alias nf=neofetch
@@ -46,7 +32,7 @@ alias cl=clear
 alias mpv='mpv --fullscreen'
 alias lg=lazygit
 alias copy=wl-copy
-alias r='./run.sh'
+alias cmb='cmake -B build && cmake --build build -j4'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
