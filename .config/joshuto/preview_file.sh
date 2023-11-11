@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+## This script is a template script for creating textual file previews in Joshuto.
+##
+## Copy this script to your Joshuto configuration directory and refer to this
+## script in `joshuto.toml` in the `[preview]` section like
+## ```
+## preview_script = "~/.config/joshuto/preview_file.sh"
+## ```
+## Make sure the file is marked as executable:
+## ```sh
+## chmod +x ~/.config/joshuto/preview_file.sh
+## ```
 ## Joshuto will call this script for each file when first hovered by the cursor.
 ## If this script returns with an exit code 0, the stdout of this script will be
 ## the file's preview text in Joshuto's right panel.
@@ -72,7 +83,7 @@ handle_extension() {
 		exit 1
 		;;
 
-	## PDF
+		## PDF
 	pdf)
 		## Preview as text conversion
 		pdftotext -l 10 -nopgbrk -q -- "${FILE_PATH}" - |
@@ -83,22 +94,27 @@ handle_extension() {
 		exit 1
 		;;
 
-	## BitTorrent
+		## BitTorrent
 	torrent)
 		transmission-show -- "${FILE_PATH}" && exit 0
 		exit 1
 		;;
 
-	## OpenDocument
-	odt | ods | odp | sxw)
+		## OpenDocument
+	odt | sxw)
 		## Preview as text conversion
 		odt2txt "${FILE_PATH}" && exit 0
 		## Preview as markdown conversion
 		pandoc -s -t markdown -- "${FILE_PATH}" && exit 0
 		exit 1
 		;;
+	ods | odp)
+		## Preview as text conversion (unsupported by pandoc for markdown)
+		odt2txt "${FILE_PATH}" && exit 0
+		exit 1
+		;;
 
-	## XLSX
+		## XLSX
 	xlsx)
 		## Preview as csv conversion
 		## Uses: https://github.com/dilshod/xlsx2csv
@@ -106,7 +122,7 @@ handle_extension() {
 		exit 1
 		;;
 
-	## HTML
+		## HTML
 	htm | html | xhtml)
 		## Preview as text conversion
 		w3m -dump "${FILE_PATH}" && exit 0
@@ -115,14 +131,14 @@ handle_extension() {
 		pandoc -s -t markdown -- "${FILE_PATH}" && exit 0
 		;;
 
-	## JSON
+		## JSON
 	json | ipynb)
 		jq --color-output . "${FILE_PATH}" && exit 0
 		python -m json.tool -- "${FILE_PATH}" && exit 0
 		;;
 
-	## Direct Stream Digital/Transfer (DSDIFF) and wavpack aren't detected
-	## by file(1).
+		## Direct Stream Digital/Transfer (DSDIFF) and wavpack aren't detected
+		## by file(1).
 	dff | dsf | wv | wvc)
 		mediainfo "${FILE_PATH}" && exit 0
 		exiftool "${FILE_PATH}" && exit 0
@@ -134,72 +150,43 @@ handle_mime() {
 	local mimetype="${1}"
 
 	case "${mimetype}" in
-	## RTF and DOC
-	text/rtf | *msword)
-		## Preview as text conversion
-		## note: catdoc does not always work for .doc files
-		## catdoc: http://www.wagner.pp.ru/~vitus/software/catdoc/
-		catdoc -- "${FILE_PATH}" && exit 0
-		exit 1
-		;;
-
-	## DOCX, ePub, FB2 (using markdown)
-	## You might want to remove "|epub" and/or "|fb2" below if you have
-	## uncommented other methods to preview those formats
-	*wordprocessingml.document | */epub+zip | */x-fictionbook+xml)
-		## Preview as markdown conversion
-		pandoc -s -t markdown -- "${FILE_PATH}" | bat -l markdown \
-			--color=always --paging=never \
-			--style=plain \
-			--terminal-width="${PREVIEW_WIDTH}" && exit 0
-		exit 1
-		;;
-
-	## E-mails
-	message/rfc822)
-		## Parsing performed by mu: https://github.com/djcb/mu
-		mu view -- "${FILE_PATH}" && exit 0
-		exit 1
-		;;
-
-	## XLS
-	*ms-excel)
-		## Preview as csv conversion
-		## xls2csv comes with catdoc:
-		##   http://www.wagner.pp.ru/~vitus/software/catdoc/
-		xls2csv -- "${FILE_PATH}" && exit 0
-		exit 1
-		;;
-
 	## Text
 	text/* | */xml)
-		bat --color=always --paging=never \
-			--style=plain \
-			--terminal-width="${PREVIEW_WIDTH}" \
-			"${FILE_PATH}" && exit 0
-		cat "${FILE_PATH}" && exit 0
+		if [[ "$(stat -f '%z' -- "$FILE_PATH}")" -le "$HIGHLIGHT_SIZE_MAX" ]]; then
+			bat --color=always --paging=never --style=plain --terminal-width="$PREVIEW_WIDTH" "$FILE_PATH" && exit 0
+		fi
 		exit 1
 		;;
 
-	## DjVu
-	image/vnd.djvu)
-		## Preview as text conversion (requires djvulibre)
-		djvutxt "${FILE_PATH}" | fmt -w "${PREVIEW_WIDTH}" && exit 0
-		exiftool "${FILE_PATH}" && exit 0
+	## JSON
+	*/json)
+		jq --color-output . "$FILE_PATH" && exit 0
 		exit 1
 		;;
 
 	## Image
 	image/*)
-		## Preview as text conversion
-		exiftool "${FILE_PATH}" && exit 0
-		exit 1
+		exif=$(exiftool "$FILE_PATH")
+		file_size=$(echo "$exif" | grep '^File Size' | awk '{print $4 " " $5}')
+		image_size=$(echo "$exif" | grep '^Image Size' | awk '{print $4}')
+		mime_type=$(echo "$exif" | grep '^MIME Type' | awk '{print $4}')
+		echo -e "File Size  : $file_size\nImage Size : $image_size\nMIME Type  : $mime_type"
+		exit 0
 		;;
 
-	## Video and audio
-	video/* | audio/*)
-		mediainfo "${FILE_PATH}" && exit 0
-		exiftool "${FILE_PATH}" && exit 0
+	## Video
+	video/*)
+		exif=$(exiftool "$FILE_PATH")
+		file_size=$(echo "$exif" | grep '^File Size' | awk '{print $4 " " $5}')
+		duration=$(echo "$exif" | grep '^Duration' | awk '{print $3}')
+		mime_type=$(echo "$exif" | grep '^MIME Type' | awk '{print $4}')
+		echo -e "File Size : $file_size\nDuration  : $duration\nMIME Type : $mime_type"
+		exit 0
+		;;
+
+	## Audio
+	audio/*)
+		exiftool "$FILE_PATH" && exit 0
 		exit 1
 		;;
 	esac
