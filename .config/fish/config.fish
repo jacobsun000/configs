@@ -32,6 +32,7 @@ alias cl=clear
 alias mpv='mpv --fullscreen'
 alias lg=lazygit
 alias copy=wl-copy
+alias nvd='neovide --multigrid'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
