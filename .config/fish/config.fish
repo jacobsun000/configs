@@ -32,7 +32,6 @@ alias cl=clear
 alias mpv='mpv --fullscreen'
 alias lg=lazygit
 alias copy=wl-copy
-alias cmb='cmake -B build && cmake --build build -j4'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
