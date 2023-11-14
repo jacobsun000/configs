@@ -9,6 +9,8 @@ local opt = vim.opt
 opt.expandtab = true
 opt.scrolloff = 8
 opt.iskeyword:remove("_")
+opt.wrap = true
+opt.linebreak = true
 
 -- Neovide
 if vim.g.neovide then
