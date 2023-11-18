@@ -1,5 +1,5 @@
 return {
-  -- add gruvbox
+  -- add monokai-pro
   {
     "loctvl842/monokai-pro.nvim",
     opts = {
@@ -13,7 +13,10 @@ return {
     },
   },
 
-  -- Configure LazyVim to load gruvbox
+  { "catppuccin/nvim", disable = true },
+  { "folke/tokyonight.nvim", disable = true },
+
+  -- Configure LazyVim to load monokai-pro
   {
     "LazyVim/LazyVim",
     opts = {
