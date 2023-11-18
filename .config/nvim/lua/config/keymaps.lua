@@ -2,10 +2,8 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-local Util = require("lazyvim.util")
-
 local unmap = vim.keymap.del
-local map = Util.safe_keymap_set
+local map = vim.keymap.set
 -------- Leader Key  --------
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -20,9 +18,9 @@ map({ "n", "v" }, "h", "e")
 map({ "n", "v" }, "H", "E")
 map({ "n", "v" }, "n", "h")
 map({ "n", "v" }, "N", "H")
-map({ "n", "v" }, "e", "j")
+map({ "n", "v" }, "e", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map({ "n", "v" }, "E", "J")
-map({ "n", "v" }, "u", "k")
+map({ "n", "v" }, "u", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map({ "n", "v" }, "U", "K")
 map({ "n", "v" }, "I", "L")
 map({ "n" }, "i", "l")
