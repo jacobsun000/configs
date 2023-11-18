@@ -1,21 +1,39 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  incremental_selection = {
-    keys = {
-      { "<CR>", "init_selection" },
-      { "<CR>", "node_incremental" },
-      { "<TAB>", "scope_incremental" },
-      { "<TAB>", "node_incremental" },
-      { "<S-TAB>", "node_decremental" },
+  opts = {
+    ensure_installed = {
+      "bash",
+      "c",
+      "diff",
+      "html",
+      "javascript",
+      "jsdoc",
+      "json",
+      "jsonc",
+      "lua",
+      "luadoc",
+      "luap",
+      "markdown",
+      "markdown_inline",
+      "python",
+      "php",
+      "query",
+      "regex",
+      "toml",
+      "tsx",
+      "typescript",
+      "vim",
+      "vimdoc",
+      "yaml",
     },
-    enable = true,
-    keymaps = function()
-      return {
-        init_selection = "<CR>",
-        scope_incremental = "<CR>",
-        node_incremental = "<TAB>",
-        node_decremental = "<S-TAB>",
-      }
-    end,
+    incremental_selection = {
+      enable = true,
+      keymaps = {
+        init_selection = "<A-v>",
+        node_incremental = "v",
+        scope_incremental = false,
+        node_decremental = "V",
+      },
+    },
   },
 }
