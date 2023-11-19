@@ -1,0 +1,14 @@
+[default]
+path = "~/Pictures/Wallpapers/highres"
+duration = "10m"
+sorting = "ascending"
+
+[DP-1]
+path = "~/Pictures/Wallpapers/highres"
+duration = "10m"
+sorting = "random"
+
+[HDMI-A-1]
+path = "~/Pictures/Wallpapers/lowres"
+duration = "10m"
+sorting = "ascending"
