@@ -25,7 +25,7 @@ cat <<EOF >"$HOME"/.config/waybar/config
   {
   "output": [ "$monitor" ],
     "include": [
-      "~/.config/waybar/bars/top.json",
+      "~/.config/waybar/bars/bar.json",
     ],
   }
 ]

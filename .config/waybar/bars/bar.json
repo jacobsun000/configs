@@ -1,6 +1,6 @@
 {
-  "layer": "top",
-  "position": "top",
+  "layer": "bottom",
+  "position": "bottom",
   "modules-left": [
     "custom/launcher",
     "group/hardware",
@@ -13,7 +13,7 @@
     "group/scripts",
     "group/scroll",
     "custom/weather",
-    "clock",
+    "clock"
   ],
   "hyprland/workspaces": {
     "format": "{id}",
@@ -27,8 +27,8 @@
       "6": [],
       "7": [],
       "8": [],
-      "9": [],
-    },
+      "9": []
+    }
   },
   "group/scroll": {
     "orientation": "horizontal",
@@ -42,7 +42,7 @@
     "orientation": "horizontal",
     "modules": [
       "hyprland/submap",
-      "custom/updates",
+      "custom/updates"
     ]
   },
   "group/hardware": {
@@ -51,7 +51,7 @@
       "cpu",
       "memory",
       "network",
-      "bluetooth",
+      "bluetooth"
     ]
   },
   "pulseaudio#mic": {
@@ -102,21 +102,21 @@
     "on-scroll-down": "~/.config/waybar/bin/brightness.sh 2 down",
     "tooltip": false,
     "return-type": "json",
-    "interval": 10,
+    "interval": 10
   },
   "memory": {
     "format": "  {}%",
-    "on-click": "alacritty -e btop",
+    "on-click": "alacritty -e btop"
   },
   "disk": {
     "interval": 600,
     "format": " {percentage_used}%",
     "path": "/",
-    "on-click": "alacritty -e btop",
+    "on-click": "alacritty -e btop"
   },
   "cpu": {
     "format": "  {usage}%",
-    "on-click": "alacritty -e btop",
+    "on-click": "alacritty -e btop"
   },
   "custom/cputemp": {
     "format": "{}",
@@ -130,10 +130,10 @@
     "exec": "wttrbar",
     "return-type": "json"
   },
-	"tray":{
-		"icon-size":18,
-		"spacing": 10
-	},
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  },
   "hyprland/submap": {
     "format": "{}",
     "tooltip": false
