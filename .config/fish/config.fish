@@ -33,6 +33,7 @@ alias mpv='mpv --fullscreen'
 alias lg=lazygit
 alias copy=wl-copy
 alias nvd='neovide --multigrid'
+alias start_zoom='XDG_CURRENT_DESKTOP=gnome zoom'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
