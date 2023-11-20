@@ -6,8 +6,8 @@
 ##
 
 time=$(date +%Y-%m-%d-%H-%M-%S)
-SAVEDIR="$(xdg-user-dir PICTURES)/Screenshots"
-SAVEFILE="${SAVEDIR}/Screenshot_${time}.png"
+SAVEDIR="~/Desktop"
+SAVEFILE="~/Desktop/Screenshot_${time}.png"
 
 send_notify() {
 	if [[ "$1" == "1" ]]; then
