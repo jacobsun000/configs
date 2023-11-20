@@ -19,18 +19,19 @@ set MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set BAT_THEME "Monokai Extended Origin"
 
 # aliases
-alias ls=exa
 alias cat=bat
+alias ls=exa
 alias la='exa -a'
 alias lla='exa -la'
+alias cl=clear
 alias nv=nvim
 alias vim=nvim
-alias nf=neofetch
 alias ra='joshuto --change-directory'
+alias nf=neofetch
 alias q=exit
-alias cl=clear
 alias mpv='mpv --fullscreen'
 alias lg=lazygit
+alias ly='lazygit -ucd ~/.local/share/yadm/lazygit -w ~ -g ~/.local/share/yadm/repo.git'
 alias copy=wl-copy
 alias nvd='neovide --multigrid'
 alias start_zoom='XDG_CURRENT_DESKTOP=gnome zoom'
