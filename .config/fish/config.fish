@@ -2,6 +2,22 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+# PATH
+contains /usr/local/bin $PATH
+or set PATH /usr/local/bin $PATH
+
+contains /opt/homebrew/bin
+or set PATH /opt/homebrew/bin $PATH
+
+contains /opt/homebrew/opt/openjdk/bin
+or set PATH /opt/homebrew/opt/openjdk/bin $PATH
+
+contains ~/.cargo/bin
+or set PATH ~/.cargo/bin $PATH
+
+contains ~/.local/share/gem/ruby/3.0.0/bin
+or set PATH ~/.local/share/gem/ruby/3.0.0/bin $PATH
+
 zoxide init fish | source
 thefuck --alias | source
 
