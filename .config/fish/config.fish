@@ -54,6 +54,7 @@ alias ly='lazygit -ucd ~/.local/share/yadm/lazygit -w ~ -g ~/.local/share/yadm/r
 alias copy=wl-copy
 alias nvd='neovide --multigrid'
 alias start_zoom='XDG_CURRENT_DESKTOP=gnome zoom'
+alias chrome='google-chrome-stable'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
