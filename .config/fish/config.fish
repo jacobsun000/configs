@@ -56,6 +56,11 @@ alias nvd='neovide --multigrid'
 alias start_zoom='XDG_CURRENT_DESKTOP=gnome zoom'
 alias chrome='google-chrome-stable'
 
+# fix kitty xterm
+if test "$TERM" = xterm-kitty
+    alias ssh="kitty +kitten ssh"
+end
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 if test -f /home/jacob/miniconda3/bin/conda
