@@ -25,6 +25,7 @@ return {
       "vim",
       "vimdoc",
       "yaml",
+      "glsl",
     },
     incremental_selection = {
       enable = true,
