@@ -16,12 +16,13 @@ opt.linebreak = true
 if vim.g.neovide then
   vim.o.guifont = "Source Code Pro:h13"
   vim.g.neovide_refresh_rate = 120
+  vim.g.neovide_refresh_rate_idle = 5
   vim.g.neovide_transparency = 0.8
   vim.g.neovide_scroll_animation_length = 0.1
   vim.g.neovide_hide_mouse_when_typing = true
   vim.g.neovide_cursor_animation_legnth = 0.05
   vim.g.neovide_cursor_trail_size = 0.5
   vim.g.neovide_cursor_vfx_mode = "pixiedust"
-  -- vim.g.neovide_profiler = false
+  -- vim.g.neovide_profiler = true
   -- vim.g.neovide_fullscreen = true
 end
