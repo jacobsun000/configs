@@ -2,12 +2,22 @@ return {
   -- add monokai-pro
   {
     "loctvl842/monokai-pro.nvim",
+    priority = 1000,
     opts = {
       transparent_background = false,
       devicons = true,
       filter = "pro",
-      background_clear = { "float_win", "toggleterm", "telescope", "notify", "which-key", "neo-tree", "bufferline" },
       styles = {
+        background_clear = {
+          "float_win",
+          "toggleterm",
+          "telescope",
+          "notify",
+          "which-key",
+          "neo-tree",
+          "bufferline",
+          "lualine",
+        },
         comment = { italic = true },
       },
     },
