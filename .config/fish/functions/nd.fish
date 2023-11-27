@@ -14,9 +14,14 @@ function nd
     # get current window pid
     set term_pid (hyprctl activewindow | string match -r "pid: \d+" | string replace -r "pid: " '')
 
+    # debug info
+    # echo "Current workspace: $current_workspace"
+    # echo "Terminal pid: $term_pid"
+    # echo "Window class: $window_class : $term_pid"
+
     # hide terminal
-    hyprctl dispatch movetoworkspacesilent 0,pid:$term_pid >/dev/null
-    neovide $argv
+    hyprctl dispatch movetoworkspacesilent 20,pid:$term_pid >/dev/null
+    neovide --multigrid $argv
 
     # get neovide pid
     sleep 1
