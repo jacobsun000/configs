@@ -52,7 +52,6 @@ fzf_case_sensitivity = "insensitive"
 
 # Optional list of command aliases (empty by default)
 [cmd_aliases]
-q = "quit"
 # ...
 
 [tab]

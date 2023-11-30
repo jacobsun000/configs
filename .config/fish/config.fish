@@ -45,7 +45,6 @@ alias lla='exa -la'
 alias cl=clear
 alias nv=nvim
 alias vim=nvim
-alias ra='joshuto --change-directory'
 alias nf=neofetch
 alias q=exit
 alias mpv='mpv --fullscreen'
