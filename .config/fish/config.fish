@@ -25,6 +25,8 @@ thefuck --alias | source
 set -x EDITOR nvim
 set -x VISUAL $EDITOR
 set -x GIT_EDITOR $EDITOR
+
+# Cmake compile commands
 set -x CMAKE_EXPORT_COMPILE_COMMANDS 1
 
 # vi-mode
