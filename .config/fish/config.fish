@@ -49,7 +49,7 @@ alias nf=neofetch
 alias q=exit
 alias mpv='mpv --fullscreen'
 alias lg=lazygit
-alias ly='lazygit -ucd ~/.local/share/yadm/lazygit -w ~ -g ~/.local/share/yadm/repo.git'
+alias ly='lazygit -w ~ -g ~/.local/share/yadm/repo.git'
 alias copy=wl-copy
 alias nvd='neovide --multigrid'
 alias start_zoom='XDG_CURRENT_DESKTOP=gnome zoom'
