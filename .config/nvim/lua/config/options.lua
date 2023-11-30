@@ -4,8 +4,6 @@
 
 local opt = vim.opt
 
--- opt.shiftwidth = 4
--- opt.tabstop = 4
 opt.expandtab = true
 opt.scrolloff = 8
 opt.iskeyword:remove("_")
@@ -15,6 +13,7 @@ opt.linebreak = true
 -- Neovide
 if vim.g.neovide then
   vim.o.guifont = "Source Code Pro:h13"
+  vim.o.cursorline = false
   vim.g.neovide_refresh_rate = 120
   vim.g.neovide_refresh_rate_idle = 5
   vim.g.neovide_transparency = 0.8
