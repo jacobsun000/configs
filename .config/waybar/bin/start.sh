@@ -18,16 +18,24 @@ check hyprctl || {
 	exit 1
 }
 
-monitor="HDMI-A-1"
+while true; do
+	# Start waybar
+	setsid waybar &>/dev/null &
+	waybar_pid=$!
 
-cat <<EOF >"$HOME"/.config/waybar/config
-[
-  {
-  "output": [ "$monitor" ],
-    "include": [
-      "~/.config/waybar/bars/bar.json",
-    ],
-  }
-]
-EOF
-setsid waybar &>/dev/null &
+	# Wait for waybar to exit
+	wait $waybar_pid
+
+	# Check exit status
+	exit_status=$?
+	if [ $exit_status -ne 0 ]; then
+		# waybar crashed, restart it
+		notify "waybar crashed, restarting..."
+	else
+		# waybar closed normally, don't restart
+		break
+	fi
+
+	# Optional: sleep for a bit before restarting waybar to avoid rapid restart loops
+	sleep 5
+done
