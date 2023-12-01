@@ -48,16 +48,8 @@ return {
           cmp.abort()
           fallback()
         end, { "i", "s" }),
-        ["<Right>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.confirm({ select = true })
-          elseif has_words_before() then
-            cmp.complete()
-          else
-            fallback()
-          end
-        end, { "i", "s" }),
         ["<Left>"] = cmp.mapping.abort(),
+        ["<Esc>"] = cmp.mapping.abort(),
         ["<C-e>"] = cmp.mapping.scroll_docs(-4),
         ["<C-u>"] = cmp.mapping.scroll_docs(4),
       })
