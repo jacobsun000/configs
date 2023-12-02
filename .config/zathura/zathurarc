@@ -1,0 +1,9 @@
+set selection-clipboard clipboard
+map <C-i> recolor
+
+map n scroll left
+map e scroll down
+map u scroll up
+map i scroll right
+map j search next
+map J search previous
