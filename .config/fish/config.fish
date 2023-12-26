@@ -18,8 +18,19 @@ or set PATH ~/.cargo/bin $PATH
 contains ~/.local/share/gem/ruby/3.0.0/bin
 or set PATH ~/.local/share/gem/ruby/3.0.0/bin $PATH
 
-zoxide init fish | source
-thefuck --alias | source
+# Homebrew
+set -l brew_path /opt/homebrew/bin/brew
+if test -x $brew_path
+    eval ($brew_path shellenv)
+end
+
+if type -q zoxide
+    zoxide init fish | source
+end
+
+if type -q thefuck
+    thefuck --alias | source
+end
 
 # defult editor
 set -x EDITOR nvim
@@ -74,4 +85,3 @@ else
     end
 end
 # <<< conda initialize <<<
-eval (/opt/homebrew/bin/brew shellenv)
