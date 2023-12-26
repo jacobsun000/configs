@@ -53,11 +53,11 @@ set XDG_CONFIG_HOME "$HOME/.config"
 # aliases
 abbr cat bat
 abbr ls exa
+abbr ll 'exa -l'
 abbr la 'exa -a'
 abbr lla 'exa -la'
 abbr cl clear
 abbr nv nvim
-abbr vim nvim
 abbr nf neofetch
 abbr q exit
 abbr mpv 'mpv --fullscreen'
