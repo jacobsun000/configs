@@ -40,21 +40,22 @@ set BAT_THEME "Monokai Extended Origin"
 set XDG_CONFIG_HOME "$HOME/.config"
 
 # aliases
-alias cat=bat
-alias ls=exa
-alias la='exa -a'
-alias lla='exa -la'
-alias cl=clear
-alias nv=nvim
-alias nf=neofetch
-alias q=exit
-alias mpv='mpv --fullscreen'
-alias lg=lazygit
-alias ly='lazygit -w ~ -g ~/.local/share/yadm/repo.git'
-alias copy=wl-copy
-alias nvd='neovide --multigrid'
-alias start_zoom='XDG_CURRENT_DESKTOP=gnome zoom'
-alias chrome='google-chrome-stable'
+abbr cat bat
+abbr ls exa
+abbr la 'exa -a'
+abbr lla 'exa -la'
+abbr cl clear
+abbr nv nvim
+abbr vim nvim
+abbr nf neofetch
+abbr q exit
+abbr mpv 'mpv --fullscreen'
+abbr lg lazygit
+abbr ly 'lazygit -w ~ -g ~/.local/share/yadm/repo.git'
+abbr copy wl-copy
+abbr nvd 'neovide --multigrid'
+abbr start_zoom 'XDG_CURRENT_DESKTOP=gnome zoom'
+abbr chrome google-chrome-stable
 
 # fix kitty xterm
 if test "$TERM" = xterm-kitty
