@@ -71,6 +71,7 @@ abbr q exit
 abbr mpv 'mpv --fullscreen'
 abbr lg lazygit
 alias ly 'lazygit -w ~ -g ~/.local/share/yadm/repo.git -ucd ~/.config/lazygit'
+abbr grep rg
 abbr copy wl-copy
 abbr nvd 'neovide --multigrid'
 abbr start_zoom 'XDG_CURRENT_DESKTOP=gnome zoom'
