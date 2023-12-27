@@ -69,7 +69,7 @@ abbr nf neofetch
 abbr q exit
 abbr mpv 'mpv --fullscreen'
 abbr lg lazygit
-abbr ly 'lazygit -w ~ -g ~/.local/share/yadm/repo.git -ucd ~/.config/lazygit'
+alias ly 'lazygit -w ~ -g ~/.local/share/yadm/repo.git -ucd ~/.config/lazygit'
 abbr copy wl-copy
 abbr nvd 'neovide --multigrid'
 abbr start_zoom 'XDG_CURRENT_DESKTOP=gnome zoom'
