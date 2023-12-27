@@ -33,9 +33,10 @@ if type -q thefuck
 end
 
 # defult editor
-set -x EDITOR nvim
-set -x VISUAL $EDITOR
-set -x GIT_EDITOR $EDITOR
+set -gx EDITOR (which nvim)
+set -gx VISUAL $EDITOR
+set -gx GIT_EDITOR $EDITOR
+set -gx SUDO_EDITOR $EDITOR
 
 # Cmake compile commands
 set -x CMAKE_EXPORT_COMPILE_COMMANDS 1
