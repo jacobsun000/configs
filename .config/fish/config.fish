@@ -50,12 +50,19 @@ set BAT_THEME "Monokai Extended Origin"
 # lazygit
 set XDG_CONFIG_HOME "$HOME/.config"
 
-# aliases
+# Files & Directories
+abbr mv "mv -iv"
+abbr cp "cp -riv"
+abbr mkdir "mkdir -vp"
 abbr cat bat
-abbr ls exa
-abbr ll 'exa -l'
-abbr la 'exa -a'
-abbr lla 'exa -la'
+# TODO: Switch from exa to eza
+alias ls="exa --color=always --icons --group-directories-first"
+alias la 'exa --color=always --icons --group-directories-first --all'
+alias ll 'exa --color=always --icons --group-directories-first --long'
+alias lla 'exa --color=always --icons --group-directories-first --all --long'
+abbr l lla
+
+# aliases
 abbr cl clear
 abbr nv nvim
 abbr nf neofetch
