@@ -37,6 +37,7 @@ set -gx EDITOR (which nvim)
 set -gx VISUAL $EDITOR
 set -gx GIT_EDITOR $EDITOR
 set -gx SUDO_EDITOR $EDITOR
+set -x MANPAGER "nvim +Man!" # Man pager
 
 # Cmake compile commands
 set -x CMAKE_EXPORT_COMPILE_COMMANDS 1
