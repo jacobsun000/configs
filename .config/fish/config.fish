@@ -77,6 +77,7 @@ abbr copy wl-copy
 abbr nvd 'neovide --multigrid'
 abbr start_zoom 'XDG_CURRENT_DESKTOP=gnome zoom'
 abbr chrome google-chrome-stable
+abbr dotdot --regex '^\.\.+$' --function multicd
 
 # fix kitty xterm
 if test "$TERM" = xterm-kitty
