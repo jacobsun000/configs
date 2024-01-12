@@ -21,7 +21,7 @@ function nd
 
     # hide terminal
     hyprctl dispatch movetoworkspacesilent 20,pid:$term_pid >/dev/null
-    neovide --multigrid $argv
+    neovide $argv
 
     # get neovide pid
     sleep 1
