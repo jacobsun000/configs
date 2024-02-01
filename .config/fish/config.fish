@@ -37,7 +37,8 @@ set -gx EDITOR (which nvim)
 set -gx VISUAL $EDITOR
 set -gx GIT_EDITOR $EDITOR
 set -gx SUDO_EDITOR $EDITOR
-set -x MANPAGER "nvim +Man!" # Man pager
+set -gx MANPAGER 'nvim +Man!'
+set -gx MANWIDTH 999
 
 # Cmake compile commands
 set -x CMAKE_EXPORT_COMPILE_COMMANDS 1
@@ -46,7 +47,6 @@ set -x CMAKE_EXPORT_COMPILE_COMMANDS 1
 # set fish_key_bindings fish_user_key_bindings
 
 # bat
-set MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set BAT_THEME "Monokai Extended Origin"
 
 # lazygit
