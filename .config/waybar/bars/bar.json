@@ -41,7 +41,6 @@
   "group/scripts": {
     "orientation": "horizontal",
     "modules": [
-      "hyprland/submap",
       "custom/updates"
     ]
   },
@@ -133,10 +132,6 @@
   "tray": {
     "icon-size": 18,
     "spacing": 10
-  },
-  "hyprland/submap": {
-    "format": "{}",
-    "tooltip": false
   },
   "custom/updates": {
     "format": "{}",
