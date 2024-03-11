@@ -1,0 +1,33 @@
+inoremap jj <Esc>
+vnoremap jj <Esc>
+
+nnoremap k i
+nnoremap K I
+nnoremap l u
+nnoremap L U
+nnoremap h e
+nnoremap H E
+nnoremap n h
+nnoremap N H
+nnoremap e j
+nnoremap E J
+nnoremap u k
+nnoremap U K
+nnoremap I L
+nnoremap i l
+nnoremap j n
+nnoremap J N
+
+vnoremap k i
+vnoremap K I
+vnoremap l u
+vnoremap L U
+vnoremap h e
+vnoremap H E
+vnoremap n h
+vnoremap N H
+vnoremap e j
+vnoremap E J
+vnoremap u k
+vnoremap U K
+vnoremap I L
