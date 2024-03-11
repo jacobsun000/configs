@@ -1,6 +1,7 @@
 function r
     # Default to running run.sh if none of the above project types are found
     if test -f run.sh
+        chmod +x run.sh
         ./run.sh $argv
         return
     end
