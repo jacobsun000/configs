@@ -3,3 +3,5 @@
 # Please adapt and uncomment the following lines:
 	name = Jacob Sun
 	email = jacobsun000@gmail.com
+[safe]
+	directory = /mnt/truenas/document/Projects/Rust/rvim
