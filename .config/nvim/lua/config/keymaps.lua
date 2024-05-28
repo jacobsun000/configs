@@ -38,33 +38,33 @@ map({ "n" }, "j", "n")
 map({ "n" }, "J", "N")
 
 -------- General --------
-map({ "i", "v" }, "jj", "<Esc>", { desc = "Quick exit to normal mode" })
-map({ "i", "v" }, "<C-j>", "<Esc>", { desc = "Quick exit to normal mode" })
+map({ "i", "v" }, "jj", "<Esc>")
+map({ "i", "v" }, "<C-j>", "<Esc>")
 unmap("i", ";")
-map("i", ";;", "<Esc>A;<C-G>u", { desc = "Add semicoln at EOL" })
+map("i", ";;", "<Esc>A;<C-G>u")
 
 -- Scroll
-map("n", "<C-e>", "<C-d>", { desc = "Scroll down" })
+map("n", "<C-e>", "<C-d>")
 
 -- Window
 unmap("n", "<C-h>")
 unmap("n", "<C-j>")
 unmap("n", "<C-k>")
 unmap("n", "<C-l>")
-map("n", "<A-n>", "<C-w>h", { desc = "Go to left window", remap = true })
-map("n", "<A-i>", "<C-w>l", { desc = "Go to right window", remap = true })
-map("n", "<A-u>", "<C-w>k", { desc = "Go to upper window", remap = true })
-map("n", "<A-e>", "<C-w>j", { desc = "Go to below window", remap = true })
-map("n", "<leader>ws", "<C-W>v", { desc = "Split window right", remap = true })
+map("n", "<A-n>", "<C-w>h", { remap = true })
+map("n", "<A-i>", "<C-w>l", { remap = true })
+map("n", "<A-u>", "<C-w>k", { remap = true })
+map("n", "<A-e>", "<C-w>j", { remap = true })
+map("n", "<leader>ws", "<C-W>v", { remap = true })
 
 -- Buffer
 unmap("n", "<S-h>")
 unmap("n", "<S-l>")
-map("n", "<S-n>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
-map("n", "<S-i>", "<cmd>bnext<cr>", { desc = "Next buffer" })
+map("n", "<S-n>", "<cmd>bprevious<cr>")
+map("n", "<S-i>", "<cmd>bnext<cr>")
 
 -- Terminal
-map("t", "<C-j>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
+map("t", "<C-j>", "<c-\\><c-n>")
 
 -- Fold
-map("n", "zo", "za", { desc = "Toggle Fold" })
+map("n", "zo", "za")
