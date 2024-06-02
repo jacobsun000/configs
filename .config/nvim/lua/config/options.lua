@@ -10,17 +10,17 @@ opt.iskeyword:remove("_")
 opt.wrap = true
 opt.linebreak = true
 vim.g.clipboard = {
-  name = 'OSC 52',
+  name = 'WslClipboard',
   copy = {
-    ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
-    ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+    ['+'] = 'clip.exe',
+    ['*'] = 'clip.exe',
   },
   paste = {
-    ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
-    ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+    ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
   },
+  cache_enabled = 0,
 }
-
 -- Neovide
 if vim.g.neovide then
   vim.o.guifont = "Source Code Pro:h13"
