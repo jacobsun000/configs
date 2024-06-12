@@ -14,10 +14,6 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
--------- Leader Key  --------
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 -------- Colemak --------
 unmap("v", "j")
 map({ "n", "v" }, "k", "i")
