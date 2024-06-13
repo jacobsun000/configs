@@ -150,10 +150,34 @@ keybinds {
         bind "Alt k" { NewPane; }
         bind "Alt N" { MoveTab "Left"; }
         bind "Alt I" { MoveTab "Right"; }
-        bind "Alt n" "Alt Left" { MoveFocusOrTab "Left"; }
-        bind "Alt i" "Alt Right" { MoveFocusOrTab "Right"; }
-        bind "Alt e" "Alt Down" { MoveFocus "Down"; }
-        bind "Alt u" "Alt Up" { MoveFocus "Up"; }
+        bind "Alt n" {
+            MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
+                name "move_focus_or_tab";
+                payload "left";
+                move_mod "alt";
+            };
+        }
+        bind "Alt e" {
+            MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
+                name "move_focus";
+                payload "down";
+                move_mod "alt";
+            };
+        }
+        bind "Alt u" {
+            MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
+                name "move_focus";
+                payload "up";
+                move_mod "alt";
+            };
+        }
+        bind "Alt i" {
+            MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
+                name "move_focus_or_tab";
+                payload "right";
+                move_mod "alt";
+            };
+        }
         bind "Alt =" "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt [" { PreviousSwapLayout; }
