@@ -67,6 +67,7 @@ abbr l lla
 # aliases
 abbr cl clear
 abbr nv nvim
+abbr ze zellij -l welcome
 abbr nf neofetch
 abbr q exit
 abbr mpv 'mpv --fullscreen'
