@@ -5,3 +5,5 @@
 	email = jacobsun000@gmail.com
 [safe]
 	directory = /mnt/truenas/document/Projects/Rust/rvim
+[core]
+	editor = nvim
