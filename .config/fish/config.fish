@@ -81,12 +81,12 @@ abbr chrome google-chrome-stable
 abbr dotdot --regex '^\.\.+$' --function multicd
 
 # wsl
-if test -n "$WSL_DISTRO_NAME"
-    # Get the IP address of the Windows host
-    set DISPLAY (route.exe print | grep 0.0.0.0 | head -1 | awk '{print $4}'):0.0
-    # Allow connections from localhost
-    xhost +localhost >/dev/null 2>&1
-end
+#if test -n "$WSL_DISTRO_NAME"
+#    # Get the IP address of the Windows host
+#    set DISPLAY (route.exe print | grep 0.0.0.0 | head -1 | awk '{print $4}'):0.0
+#    # Allow connections from localhost
+#    xhost +localhost >/dev/null 2>&1
+#end
 
 # fix kitty xterm
 if test "$TERM" = xterm-kitty
