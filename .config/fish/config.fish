@@ -18,6 +18,9 @@ or set PATH ~/.cargo/bin $PATH
 contains ~/.local/share/gem/ruby/3.0.0/bin
 or set PATH ~/.local/share/gem/ruby/3.0.0/bin $PATH
 
+# Valgrind fix
+export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
+
 # Homebrew
 set -l brew_path /opt/homebrew/bin/brew
 if test -x $brew_path
