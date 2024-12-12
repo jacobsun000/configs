@@ -61,7 +61,7 @@ map("n", "<S-n>", "<cmd>bprevious<cr>")
 map("n", "<S-i>", "<cmd>bnext<cr>")
 
 -- Terminal
-map("t", "<C-j>", "<c-\\><c-n>")
+map("t", "jj", "<c-\\><c-n>")
 
 -- Fold
 map("n", "zo", "za")
