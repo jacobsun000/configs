@@ -1,152 +1,323 @@
-@import "./colors.css";
+@import "macchiato.css";
 
 * {
-  background: transparent;
-  font-family: "adobe-source-code-pro";
-  font-size: 15px;
-  color: white;
-  margin: 1px 1px 0px 1px;
+  border: none;
 }
 
-#waybar {
-  background: alpha(shade(@foreground, 0.4), 0.1);
+window.bar#waybar {
+  background-color: alpha(@base, 0.7);
+  border-bottom: solid alpha(@surface1, 0.7) 2;
 }
 
-#tray menu,
-tooltip {
-  background: @background;
-  color: @active;
-  border: 1px solid shade(@active, 0.6);
-}
-
-#scroll,
-#clock,
-#hardware,
-#scripts,
-#custom-weather,
-#batteries,
-#workspaces,
-#clock,
-#tray {
-  background: alpha(@background, 0.9);
-  border-radius: 8px;
-  padding: 2px;
-  margin-right: 4px;
-  border: 1px solid alpha(shade(@active, 0.6),0.1);
-}
-
-#tray {
-  padding: 0px 8px 0px 8px;
+#workspaces {
 }
 
 #workspaces button {
-  padding: 0px;
-  border-radius: 50%;
-  color: shade(@background, 0.8);
+  color: @text;
+  font-size: 1.25rem;
 }
-#workspaces button.urgent {
-  text-decoration: underline;
-  font-weight: bold;
+
+#workspaces button.empty {
+  color: @overlay0;
 }
+
 #workspaces button.active {
-  background: shade(alpha(@foreground, 0.2), 0.8);
-  color: shade(@foreground, 0.9);
-  border-radius: 6px;
+  color: @peach;
 }
 
-#cpu,
-#clock,
-#network,
-#custom-cputemp,
-#submap,
-#custom-updates,
-#gamemode,
-#custom-notifications,
-#bluetooth,
-#disk,
-#memory,
-#pulseaudio,
-#pulseaudio.mic,
-#backlight {
-  padding: 0px 6px 0px 6px;
+#submap {
+  background-color: alpha(@surface1, 0.7);
+  border-radius: 15;
+  padding-left: 15;
+  padding-right: 15;
+  margin-left: 20;
+  margin-right: 20;
 }
 
-/* subhighlight */
-#submap,
-#bluetooth.connected {
-  background: shade(alpha(@foreground, 0.1), 0.8);
-  border-radius: 8px;
+window.bar .modules-center {
+  font-weight: bold;
+  background-color: alpha(@surface1, 0.7);
+  color: @peach;
+  border-radius: 15;
+  padding-left: 20;
+  padding-right: 20;
 }
 
-#custom-brightness,
-#pulseaudio,
-#pulseaudio.mic {
-  color: #7aa2f7;
+#custom-separator {
+  color: @green;
+}
+
+#custom-separator_dot {
+  color: @green;
+}
+
+#clock.time {
+  color: @sapphire;
+}
+
+#clock.week {
+  color: @sapphire;
+}
+
+#clock.month {
+  color: @sapphire;
+}
+
+#clock.calendar {
+  color: @mauve;
+  margin-right: 8;
 }
 
 #bluetooth {
-  color: #7aa2ff;
+  background-color: alpha(@surface1, 0.7);
+  border-radius: 4;
+  padding-left: 4;
+  padding-right: 4;
 }
 
-#memory {
-  color: shade(#cca0e4, 0.8);
+#bluetooth.disabled {
+  background-color: alpha(@surface0, 0.7);
+  color: @subtext0;
 }
 
-#disk {
-  color: shade(#7aa2f7, 0.8);
+#bluetooth.on {
+  color: @blue;
 }
 
-#cpu {
-  color: shade(#a6e3a1, 0.8);
-}
-
-#custom-batterysaver.powersave,
-#custom-batterysaver.power {
-  color: #a6e3a1;
-}
-#custom-batterysaver.default,
-#custom-batterysaver.normal {
-  color: @foreground;
-}
-#custom-batterysaver.performance {
-  color: #d78787;
+#bluetooth.connected {
+  color: @sapphire;
 }
 
 #network {
-  color: #a6e3a1;
+  background-color: alpha(@surface1, 0.7);
+  border-radius: 4;
+  padding-left: 4;
+  padding-right: 8;
 }
 
-#network.disabled,
+#network.disabled {
+  background-color: alpha(@surface0, 0.7);
+  color: @subtext0;
+}
+
 #network.disconnected {
-  color: #d78787;
-}
-@keyframes blink {
-  to {
-    background-color: alpha(red, 0.6);
-    color: @foreground;
-  }
-}
-@keyframes blink-blue {
-  to {
-    background-color: alpha(#7aa2f7, 0.6);
-    color: @foreground;
-  }
+  color: @red;
 }
 
-#bluetooth.discoverable,
-#bluetooth.discovering,
-#bluetooth.pairable {
-  animation-name: blink-blue;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+#network.wifi {
+  color: @teal;
 }
 
-/* Override */
+#idle_inhibitor {
+  margin-left: 4;
+  margin-right: 4;
+}
 
-#clock {
-  margin-left: 0px;
-  border-radius: 0px 8px 8px 0px;
-  background: alpha(@background, 0.6);
+#idle_inhibitor.deactivated {
+  color: @subtext0;
+}
+
+#custom-dunst {
+  margin-right: 4;
+  margin-left: 4;
+}
+
+#custom-dunst.off {
+  color: @subtext0;
+}
+
+#custom-media.Paused {
+  color: @subtext0;
+}
+
+#privacy-item.screenshare {
+  color: @peach;
+  margin-right: 5;
+}
+
+#privacy-item.audio-in {
+  color: @pink;
+  margin-right: 4;
+}
+
+#custom-recording {
+  color: @red;
+  margin-right: 4;
+}
+
+#custom-geo {
+  color: @yellow;
+  margin-right: 4;
+}
+
+#custom-logout_menu {
+  color: @red;
+  background-color: alpha(@surface1, 0.7);
+  border-radius: 0 4 4 0;
+  padding-left: 4;
+  padding-right: 4;
+}
+
+#cpu {
+  color: @sapphire;
+}
+
+#cpu.low {
+  color: @rosewater;
+}
+
+#cpu.lower-medium {
+  color: @yellow;
+}
+
+#cpu.medium {
+  color: @peach;
+}
+
+#cpu.upper-medium {
+  color: @maroon;
+}
+
+#cpu.high {
+  color: @red;
+}
+
+#memory {
+  color: @sapphire;
+}
+
+#memory.low {
+  color: @rosewater;
+}
+
+#memory.lower-medium {
+  color: @yellow;
+}
+
+#memory.medium {
+  color: @peach;
+}
+
+#memory.upper-medium {
+  color: @maroon;
+}
+
+#memory.high {
+  color: @red;
+}
+
+#disk {
+  color: @sapphire;
+}
+
+#disk.low {
+  color: @rosewater;
+}
+
+#disk.lower-medium {
+  color: @yellow;
+}
+
+#disk.medium {
+  color: @peach;
+}
+
+#disk.upper-medium {
+  color: @maroon;
+}
+
+#disk.high {
+  color: @red;
+}
+
+#temperature {
+  color: @green;
+}
+
+#temperature.critical {
+  color: @red;
+}
+
+#battery {
+  color: @teal;
+}
+
+#battery.low {
+  color: @red;
+}
+
+#battery.lower-medium {
+  color: @maroon;
+}
+
+#battery.medium {
+  color: @peach;
+}
+
+#battery.upper-medium {
+  color: @flamingo;
+}
+
+#battery.high {
+  color: @rosewater;
+}
+
+#backlight {
+  color: @overlay0;
+}
+
+#backlight.low {
+  color: @overlay1;
+}
+
+#backlight.lower-medium {
+  color: @overlay2;
+}
+
+#backlight.medium {
+  color: @subtext0;
+}
+
+#backlight.upper-medium {
+  color: @subtext1;
+}
+
+#backlight.high {
+  color: @text;
+}
+
+#pulseaudio.bluetooth {
+  color: @sapphire;
+}
+
+#pulseaudio.muted {
+  color: @surface2;
+}
+
+#pulseaudio {
+  color: @text;
+}
+
+#pulseaudio.low {
+  color: @overlay0;
+}
+
+#pulseaudio.lower-medium {
+  color: @overlay1;
+}
+
+#pulseaudio.medium {
+  color: @overlay2;
+}
+
+#pulseaudio.upper-medium {
+  color: @subtext0;
+}
+
+#pulseaudio.high {
+  color: @subtext1;
+}
+
+#systemd-failed-units {
+  color: @red;
 }

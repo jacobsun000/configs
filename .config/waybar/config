@@ -1,8 +1,10 @@
 [
   {
-  "output": [ "HDMI-A-1" ],
-    "include": [
-      "~/.config/waybar/bars/bar.json",
+    "output": [
+      "HDMI-A-1"
     ],
+    "include": [
+      "~/.config/waybar/bar.jsonc"
+    ]
   }
 ]
