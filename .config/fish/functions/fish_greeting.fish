@@ -1,6 +1,8 @@
 function fish_greeting
-
-    if set -q fish_private_mode
-        echo "fish is running in private mode, history will not be persisted."
-    end
+    set_color blue; echo " Distro:  NixOS"
+    set_color white; echo " Langs:   Rust  Zig  Go  JS 󰛦 TS  Python  Lua  Wasm"
+    set_color green; echo " Shell:  󰈺 Fish"
+    set_color yellow; echo "󰟶 Mood:   👨‍💻"
+    set_color cyan; figlet random -f binary
+    # clear
 end

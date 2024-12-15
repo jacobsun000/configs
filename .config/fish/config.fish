@@ -2,38 +2,35 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-# PATH
-contains /usr/local/bin $PATH
-or set PATH /usr/local/bin $PATH
 
-contains /opt/homebrew/bin
-or set PATH /opt/homebrew/bin $PATH
-
-contains /opt/homebrew/opt/openjdk/bin
-or set PATH /opt/homebrew/opt/openjdk/bin $PATH
-
-contains ~/.cargo/bin
-or set PATH ~/.cargo/bin $PATH
-
-contains ~/.local/share/gem/ruby/3.0.0/bin
-or set PATH ~/.local/share/gem/ruby/3.0.0/bin $PATH
-
-# Valgrind fix
-export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
-
-# Homebrew
-set -l brew_path /opt/homebrew/bin/brew
-if test -x $brew_path
-    eval ($brew_path shellenv)
-end
-
-if type -q zoxide
-    zoxide init fish | source
-end
-
-if type -q thefuck
-    thefuck --alias | source
-end
+abbr mv "mv -iv"
+abbr cp "cp -riv"
+abbr mkdir "mkdir -vp"
+abbr cat bat
+abbr cl clear
+abbr nv nvim
+abbr ze zellij -l welcome
+abbr nf neofetch
+abbr q exit
+abbr lg lazygit
+abbr ldocker lazydocker
+abbr nf neofetch
+abbr q exit
+abbr grep rg
+abbr copy wl-copy
+alias ly 'lazygit -w ~ -g ~/.local/share/yadm/repo.git -ucd ~/.config/lazygit'
+alias nswitch="sudo nixos-rebuild switch --flake /etc/nixos#nixos"
+alias nswitchu="sudo nix flake update --flake /etc/nixos; and sudo nixos-rebuild switch --flake /etc/nixos#nixos --upgrade"
+alias nau="sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos"
+alias nsgc="sudo nix-store --gc"
+alias ngc="sudo nix-collect-garbage -d"
+alias ngc7="sudo nix-collect-garbage --delete-older-than 7d"
+alias ngc14="sudo nix-collect-garbage --delete-older-than 14d"
+#alias ls="exa --color=always --icons --group-directories-first"
+#alias la 'exa --color=always --icons --group-directories-first --all'
+#alias ll 'exa --color=always --icons --group-directories-first --long'
+#alias lla 'exa --color=always --icons --group-directories-first --all --long'
+#abbr l lla
 
 # defult editor
 set -gx EDITOR (which nvim)
@@ -43,68 +40,34 @@ set -gx SUDO_EDITOR $EDITOR
 set -gx MANPAGER 'nvim +Man!'
 set -gx MANWIDTH 999
 
-# Cmake compile commands
+# volume & brightness step
+set -gx VOLUME_STEP 5
+set -gx BRIGHTNESS_STEP 5
+
+# Cmake
 set -x CMAKE_EXPORT_COMPILE_COMMANDS 1
-
-# vi-mode
-# set fish_key_bindings fish_user_key_bindings
-
-# bat
-set BAT_THEME "Monokai Extended Origin"
 
 # lazygit
 set XDG_CONFIG_HOME "$HOME/.config"
 
-# Files & Directories
-abbr mv "mv -iv"
-abbr cp "cp -riv"
-abbr mkdir "mkdir -vp"
-abbr cat bat
-# TODO: Switch from exa to eza
-alias ls="exa --color=always --icons --group-directories-first"
-alias la 'exa --color=always --icons --group-directories-first --all'
-alias ll 'exa --color=always --icons --group-directories-first --long'
-alias lla 'exa --color=always --icons --group-directories-first --all --long'
-abbr l lla
+# theme
+set BAT_THEME "Monokai Extended Origin"
 
-# aliases
-abbr cl clear
-abbr nv nvim
-abbr ze zellij -l welcome
-abbr nf neofetch
-abbr q exit
-abbr mpv 'mpv --fullscreen'
-abbr lg lazygit
-alias ly 'lazygit -w ~ -g ~/.local/share/yadm/repo.git -ucd ~/.config/lazygit'
-abbr grep rg
-abbr copy wl-copy
-abbr nvd 'neovide --multigrid'
-abbr start_zoom 'XDG_CURRENT_DESKTOP=gnome zoom'
-abbr chrome google-chrome-stable
-abbr dotdot --regex '^\.\.+$' --function multicd
 
-# wsl
-#if test -n "$WSL_DISTRO_NAME"
-#    # Get the IP address of the Windows host
-#    set DISPLAY (route.exe print | grep 0.0.0.0 | head -1 | awk '{print $4}'):0.0
-#    # Allow connections from localhost
-#    xhost +localhost >/dev/null 2>&1
-#end
+#set -gx PATH $HOME/.cargo/bin $PATH
 
-# fix kitty xterm
-if test "$TERM" = xterm-kitty
-    alias ssh="kitty +kitten ssh"
-end
+set fish_vi_force_cursor
+set fish_cursor_default block
+set fish_cursor_insert line blink
+set fish_cursor_visual underscore blink
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /opt/miniconda3/bin/conda
-    eval /opt/miniconda3/bin/conda "shell.fish" hook $argv | source
-else
-    if test -f "/opt/miniconda3/etc/fish/conf.d/conda.fish"
-        ./opt/miniconda3/etc/fish/conf.d/conda.fish
-    else
-        set -x PATH /opt/miniconda3/bin $PATH
-    end
-end
-# <<< conda initialize <<<
+fish_default_key_bindings
+
+set -Ux FZF_DEFAULT_OPTS "\
+--color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
+--color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
+--color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796"
+
+#starship init fish | source
+zoxide init fish | source
+direnv hook fish | source
