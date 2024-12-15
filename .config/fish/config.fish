@@ -26,10 +26,10 @@ alias nsgc="sudo nix-store --gc"
 alias ngc="sudo nix-collect-garbage -d"
 alias ngc7="sudo nix-collect-garbage --delete-older-than 7d"
 alias ngc14="sudo nix-collect-garbage --delete-older-than 14d"
-#alias ls="exa --color=always --icons --group-directories-first"
-#alias la 'exa --color=always --icons --group-directories-first --all'
-#alias ll 'exa --color=always --icons --group-directories-first --long'
-#alias lla 'exa --color=always --icons --group-directories-first --all --long'
+alias ls="eza --color=auto --icons=auto --group --group-directories-first"
+alias la "eza --color=auto --icons=auto --group --group-directories-first --all"
+alias ll "eza --color=auto --icons=auto --group --header --group-directories-first --long"
+alias lla "eza --color=auto --icons=auto --group --header --group-directories-first --long --all"
 #abbr l lla
 
 # defult editor
