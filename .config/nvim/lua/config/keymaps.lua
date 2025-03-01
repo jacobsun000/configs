@@ -43,15 +43,14 @@ map("i", ";;", "<Esc>A;<C-G>u")
 map("n", "<C-e>", "<C-d>")
 
 -- Window
--- unmap("n", "<C-h>")
--- unmap("n", "<C-j>")
--- unmap("n", "<C-k>")
--- unmap("n", "<C-l>")
--- Window nevigation is handled by zellij-nav.nvim
--- map("n", "<A-n>", "<C-w>h", { remap = true })
--- map("n", "<A-i>", "<C-w>l", { remap = true })
--- map("n", "<A-u>", "<C-w>k", { remap = true })
--- map("n", "<A-e>", "<C-w>j", { remap = true })
+unmap("n", "<C-h>")
+unmap("n", "<C-j>")
+unmap("n", "<C-k>")
+unmap("n", "<C-l>")
+map("n", "<A-n>", "<C-w>h")
+map("n", "<A-i>", "<C-w>l")
+map("n", "<A-u>", "<C-w>k")
+map("n", "<A-e>", "<C-w>j")
 map("n", "<leader>ws", "<C-W>v", { remap = true })
 
 -- Buffer
