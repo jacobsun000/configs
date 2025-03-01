@@ -2,7 +2,6 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-
 abbr mv "mv -iv"
 abbr cp "cp -riv"
 abbr mkdir "mkdir -vp"
@@ -18,6 +17,7 @@ abbr nf neofetch
 abbr q exit
 abbr grep rg
 abbr copy wl-copy
+abbr l lla
 alias ly 'lazygit -w ~ -g ~/.local/share/yadm/repo.git -ucd ~/.config/lazygit'
 alias nswitch="sudo nixos-rebuild switch --flake /etc/nixos#nixos"
 alias nswitchu="sudo nix flake update --flake /etc/nixos; and sudo nixos-rebuild switch --flake /etc/nixos#nixos --upgrade"
@@ -30,7 +30,6 @@ alias ls="eza --color=auto --icons=auto --group --group-directories-first"
 alias la "eza --color=auto --icons=auto --group --group-directories-first --all"
 alias ll "eza --color=auto --icons=auto --group --header --group-directories-first --long"
 alias lla "eza --color=auto --icons=auto --group --header --group-directories-first --long --all"
-#abbr l lla
 
 # defult editor
 set -gx EDITOR (which nvim)
@@ -71,3 +70,10 @@ set -Ux FZF_DEFAULT_OPTS "\
 #starship init fish | source
 zoxide init fish | source
 direnv hook fish | source
+
+# pnpm
+set -gx PNPM_HOME "/home/jacob/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
