@@ -10,6 +10,8 @@ opt.iskeyword:remove("_")
 opt.wrap = true
 opt.linebreak = true
 
+vim.g.snacks_animate = false
+
 if vim.fn.has("wsl") == 1 then
   vim.g.clipboard = {
     name = "WslClipboard",
