@@ -10,6 +10,7 @@ opt.iskeyword:remove("_")
 opt.wrap = true
 opt.linebreak = true
 
+vim.lsp.inlay_hint.enable(false)
 vim.g.snacks_animate = false
 
 if vim.fn.has("wsl") == 1 then
