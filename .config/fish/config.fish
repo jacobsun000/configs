@@ -18,6 +18,10 @@ abbr q exit
 abbr grep rg
 abbr copy wl-copy
 abbr l lla
+abbr tm tmux
+abbr tmk tmux kill-session -t
+abbr tma tmux new-session -A -s
+
 alias ly 'lazygit -w ~ -g ~/.local/share/yadm/repo.git -ucd ~/.config/lazygit'
 alias nswitch="sudo nixos-rebuild switch --flake /etc/nixos#nixos"
 alias nswitchu="sudo nix flake update --flake /etc/nixos; and sudo nixos-rebuild switch --flake /etc/nixos#nixos --upgrade"
@@ -51,7 +55,6 @@ set XDG_CONFIG_HOME "$HOME/.config"
 
 # theme
 set BAT_THEME "Monokai Extended Origin"
-
 
 #set -gx PATH $HOME/.cargo/bin $PATH
 
