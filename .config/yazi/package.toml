@@ -1,0 +1,5 @@
+[plugin]
+deps = []
+
+[flavor]
+deps = [{ use = "sanjinso/monokai-vibrant", rev = "8b68223" }]
