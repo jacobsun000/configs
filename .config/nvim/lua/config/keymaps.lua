@@ -65,6 +65,9 @@ map("n", "<S-i>", "<cmd>bnext<cr>")
 
 -- Terminal
 map("t", "jj", "<c-\\><c-n>")
+map("n", "<C-;>", function()
+  Snacks.terminal("claude", { cwd = LazyVim.root() })
+end, { desc = "Claude Code Terminal" })
 
 -- Fold
 map("n", "zo", "za")
