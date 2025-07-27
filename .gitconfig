@@ -14,3 +14,7 @@
 	smudge = git-lfs smudge -- %f
 [init]
 	defaultBranch = main
+[diff]
+	tool = nvimdiff
+[difftool "nvimdiff"]
+	cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
